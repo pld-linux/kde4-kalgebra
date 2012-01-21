@@ -2,18 +2,20 @@
 %define		orgname		kalgebra
 
 Summary:	K Desktop Environment - Mathematical calculator
-Name:		kalgebra
-Version:	4.7.3
+Name:		kde4-kalgebra
+Version:	4.8.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	0ba1eb9298c4466e232266b81ce58bff
+# Source0-md5:	8d5ff9c91c0203c3608af10eeb67195c
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
-BuildRequires:	kde4-kdelibs-devel
+BuildRequires:	kde4-analitza-devel >= %{version}
+BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	readline-devel
 Obsoletes:	kde4-kdeedu-kalgebra < 4.6.99
+Obsoletes:	kalgebra < 4.8.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,7 +39,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir}
 
-%find_lang %{name} --with-kde
+%find_lang %{orgname} --with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -45,12 +47,8 @@ rm -rf $RPM_BUILD_ROOT
 %post -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
-%files -f %{name}.lang
+%files -f %{orgname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %ghost %{_libdir}/libanalitza.so.?
-%attr(755,root,root) %{_libdir}/libanalitza.so.*.*.*
-%attr(755,root,root) %{_libdir}/libanalitzagui.so.?
-%attr(755,root,root) %{_libdir}/libanalitzagui.so.*.*.*
 %attr(755,root,root) %{_bindir}/kalgebra
 %attr(755,root,root) %{_bindir}/kalgebramobile
 %{_desktopdir}/kde4/kalgebra.desktop
@@ -58,7 +56,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kalgebraplasmoid.desktop
 %{_iconsdir}/hicolor/*x*/apps/kalgebra.png
 %{_datadir}/apps/katepart/syntax/kalgebra.xml
-%attr(755,root,root) %{_bindir}/calgebra
 %{_datadir}/kde4/servicetypes/kalgebrascript.desktop
 %{_desktopdir}/kde4/kalgebramobile.desktop
 %{_datadir}/apps/kalgebra
