@@ -15,8 +15,8 @@ BuildRequires:	kde4-analitza-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	kde4-libkdeedu-devel >= %{version}
 BuildRequires:	readline-devel
-Obsoletes:	kde4-kdeedu-kalgebra < 4.6.99
 Obsoletes:	kalgebra < 4.8.0
+Obsoletes:	kde4-kdeedu-kalgebra < 4.6.99
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -54,9 +54,16 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kalgebramobile
 %{_desktopdir}/kde4/kalgebra.desktop
 %attr(755,root,root) %{_libdir}/kde4/plasma_applet_kalgebra.so
+%{_libdir}/kde4/imports/org/kde/analitza/Graph2D.qml
+%attr(755,root,root) %{_libdir}/kde4/imports/org/kde/analitza/libanalitzadeclarativeplugin.so
+%{_libdir}/kde4/imports/org/kde/analitza/qmldir
 %{_datadir}/kde4/services/kalgebraplasmoid.desktop
 %{_iconsdir}/hicolor/*x*/apps/kalgebra.png
 %{_iconsdir}/hicolor/scalable/apps/kalgebra.svgz
 %{_datadir}/apps/katepart/syntax/kalgebra.xml
 %{_desktopdir}/kde4/kalgebramobile.desktop
 %{_datadir}/apps/kalgebramobile
+%{_datadir}/apps/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/config.ui
+%{_datadir}/apps/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/main.qml
+%{_datadir}/apps/plasma/plasmoids/org.kde.graphsplasmoid/metadata.desktop
+%{_datadir}/kde4/services/graphsplasmoid.desktop
