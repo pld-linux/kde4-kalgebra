@@ -4,7 +4,7 @@
 Summary:	K Desktop Environment - Mathematical calculator
 Name:		kde4-kalgebra
 Version:	4.10.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
@@ -55,7 +55,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/kalgebra.desktop
 %attr(755,root,root) %{_libdir}/kde4/plasma_applet_kalgebra.so
 %{_libdir}/kde4/imports/org/kde/analitza/Graph2D.qml
-%attr(755,root,root) %{_libdir}/kde4/imports/org/kde/analitza/libanalitzadeclarativeplugin.so
+#???
+#%attr(755,root,root) %{_libdir}/kde4/imports/org/kde/analitza/libanalitzadeclarativeplugin.so
 %{_libdir}/kde4/imports/org/kde/analitza/qmldir
 %{_datadir}/kde4/services/kalgebraplasmoid.desktop
 %{_iconsdir}/hicolor/*x*/apps/kalgebra.png
@@ -63,7 +64,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/katepart/syntax/kalgebra.xml
 %{_desktopdir}/kde4/kalgebramobile.desktop
 %{_datadir}/apps/kalgebramobile
-%{_datadir}/apps/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/config.ui
-%{_datadir}/apps/plasma/plasmoids/org.kde.graphsplasmoid/contents/ui/main.qml
-%{_datadir}/apps/plasma/plasmoids/org.kde.graphsplasmoid/metadata.desktop
+%{_datadir}/apps/plasma/plasmoids/org.kde.graphsplasmoid
 %{_datadir}/kde4/services/graphsplasmoid.desktop
