@@ -5,12 +5,12 @@
 
 Summary:	K Desktop Environment - Mathematical calculator
 Name:		kde4-kalgebra
-Version:	4.12.3
+Version:	4.12.4
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	3ffc3c20628ec17b8b9b8b56b47f2ec9
+# Source0-md5:	6c184fdf25b0deb19e0751da45e80ba3
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	kde4-analitza-devel >= %{version}
