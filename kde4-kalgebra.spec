@@ -1,16 +1,14 @@
-# TODO: - see files
-
 %define		_state		stable
 %define		orgname		kalgebra
 
 Summary:	K Desktop Environment - Mathematical calculator
 Name:		kde4-kalgebra
-Version:	4.12.4
+Version:	4.13.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	6c184fdf25b0deb19e0751da45e80ba3
+# Source0-md5:	9dc5e33996c3943d7d7da8ab34789d2c
 URL:		http://www.kde.org/
 BuildRequires:	OpenGL-devel
 BuildRequires:	kde4-analitza-devel >= %{version}
@@ -56,10 +54,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kalgebramobile
 %{_desktopdir}/kde4/kalgebra.desktop
 %attr(755,root,root) %{_libdir}/kde4/plasma_applet_kalgebra.so
-# TODO - where this dir belongs to?
-#%{_libdir}/kde4/imports/org/kde/analitza/Graph2D.qml
-#%attr(755,root,root) %{_libdir}/kde4/imports/org/kde/analitza/libanalitzadeclarativeplugin.so
-#%{_libdir}/kde4/imports/org/kde/analitza/qmldir
+%dir %{_libdir}/kde4/imports/org/kde/analitza
+%{_libdir}/kde4/imports/org/kde/analitza/Graph2D.qml
+%attr(755,root,root) %{_libdir}/kde4/imports/org/kde/analitza/libanalitzadeclarativeplugin.so
+%{_libdir}/kde4/imports/org/kde/analitza/qmldir
 %{_datadir}/kde4/services/kalgebraplasmoid.desktop
 %{_iconsdir}/hicolor/*x*/apps/kalgebra.png
 %{_iconsdir}/hicolor/scalable/apps/kalgebra.svgz
